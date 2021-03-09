@@ -35,7 +35,7 @@ import cn.jpush.android.data.JPushLocalNotification;
 public class LaPushManager implements CommonPushManager {
 
 
-    private static final String TAG = "JPUSH-SetAliasAndTags";
+    private static final String TAG = "PUSH-SetAliasAndTags";
 
     public static int sequence = 1;
     /**
@@ -100,9 +100,10 @@ public class LaPushManager implements CommonPushManager {
     }
 
     @Override
-    public void setUp(Context context, boolean isDebug) {
+    public void setUp(Context context, boolean isDebug, String channel) {
         JPushInterface.setDebugMode(isDebug); // 设置开启日志,发布时请关闭日志
         JPushInterface.init(context); // 初始化 JPush
+        JPushInterface.setChannel(context, channel == null ? "" : channel);
     }
 
     @Override

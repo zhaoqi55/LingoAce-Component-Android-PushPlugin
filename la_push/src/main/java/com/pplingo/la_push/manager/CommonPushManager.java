@@ -27,7 +27,7 @@ public interface CommonPushManager {
      * @param conn
      * @param isDebug 是否是debug模式
      */
-    void setUp(Context conn, boolean isDebug);
+    void setUp(Context conn, boolean isDebug,String channel);
 
     /**
      * 获取注册Id
